@@ -1,7 +1,7 @@
 # PharmaRakshak - Pharmacogenomic Risk Predictor
 
 ## Live Demo
-- Live Web App URL: `https://YOUR-DEPLOYED-APP-URL`
+- Live Web App URL: `https://pharmarakshak.onrender.com`
 - LinkedIn Demo Video: `https://www.linkedin.com/posts/YOUR-VIDEO-LINK`
 
 ## Problem Statement
