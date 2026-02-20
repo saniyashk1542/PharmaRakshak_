@@ -2,7 +2,7 @@
 
 ## Live Demo
 - Live Web App URL: `https://pharmarakshak.onrender.com`
-- LinkedIn Demo Video: `https://www.linkedin.com/posts/YOUR-VIDEO-LINK`
+- LinkedIn Demo Video: `https://www.linkedin.com/posts/tamanna-m-meera-78311b315_rift2026-pharmaguard-pharmacogenomics-activity-7430445552137355264-CRMs?utm_source=share&utm_medium=member_android&rcm=ACoAAE_t-5MBE09fUTEkIcfnePh1ReW363iEOWA`
 
 ## Problem Statement
 Adverse drug reactions cause major preventable morbidity and mortality. This project analyzes patient VCF genetic data and predicts drug-specific pharmacogenomic risks for six high-impact gene-drug pairs, then provides structured recommendations and explainability.
