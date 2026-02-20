@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmaRakshak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <img class="brand-logo" src="images/logo.png" alt="PharmaRakshak logo" />
+        <div>
+          <p class="brand-title">PharmaRakshak</p>
+          <p class="brand-subtitle">Pharmacogenomic Clinical Decision Support</p>
+        </div>
+      </div>
+      <p class="topbar-note">For clinician-supported interpretation only</p>
+    </header>
+
+    <main class="layout" id="main-content">
+      <section class="quote-box" aria-label="Guiding quote">
+        <p>
+          Guardians of health, healers of hope - PharmaRakshaks don't just dispense medicine, they deliver care and trust.
+        </p>
+      </section>
+
+      <section class="app-grid">
+        <aside class="panel input-panel" aria-labelledby="input-heading">
+          <h1 id="input-heading">Analyze Patient VCF</h1>
+          <p class="panel-intro">Upload genetic data and generate drug-specific pharmacogenomic risk recommendations.</p>
+
+          <form id="analyze-form" novalidate>
+            <div class="field-group">
+              <label for="vcf">Genetic Data File (VCF v4.2)</label>
+              <p id="vcf-help" class="helper">Accepted format: .vcf | Maximum size: 5 MB</p>
+              <label for="vcf" id="dropzone" class="dropzone" tabindex="0" aria-describedby="vcf-help vcf-error">
+                <span class="dropzone-title">Drag and drop your VCF file here</span>
+                <span class="dropzone-sub">or click to browse</span>
+                <span id="file-name" class="file-name">No file selected</span>
+              </label>
+              <input id="vcf" name="vcf" type="file" accept=".vcf" required aria-describedby="vcf-help vcf-error" />
+              <p id="vcf-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="drugs">Target Drugs for Assessment</label>
+              <p id="drugs-help" class="helper">Select one or more supported drugs. Each selected drug generates one report.</p>
+
+              <div class="drug-chips" role="group" aria-label="Supported drugs">
+                <button type="button" class="chip" data-drug="CODEINE">CODEINE</button>
+                <button type="button" class="chip" data-drug="WARFARIN">WARFARIN</button>
+                <button type="button" class="chip" data-drug="CLOPIDOGREL">CLOPIDOGREL</button>
+                <button type="button" class="chip" data-drug="SIMVASTATIN">SIMVASTATIN</button>
+                <button type="button" class="chip" data-drug="AZATHIOPRINE">AZATHIOPRINE</button>
+                <button type="button" class="chip" data-drug="FLUOROURACIL">FLUOROURACIL</button>
+              </div>
+
+              <input
+                id="drugs"
+                name="drugs"
+                type="text"
+                value="CODEINE, WARFARIN, CLOPIDOGREL"
+                placeholder="CODEINE, WARFARIN"
+                required
+                aria-describedby="drugs-help"
+              />
+            </div>
+
+            <div class="cta-row">
+              <button type="submit" id="submit-btn" class="btn btn-primary">Run Pharmacogenomic Analysis</button>
+              <button type="button" id="reset-btn" class="btn btn-secondary">Reset</button>
+            </div>
+          </form>
+
+          <p id="status" class="status" aria-live="polite"></p>
+        </aside>
+
+        <section class="panel results-panel" aria-labelledby="results-heading">
+          <div class="results-head">
+            <h2 id="results-heading">Risk Results</h2>
+            <div class="results-actions">
+              <button id="copy-json" type="button" class="btn btn-secondary">Copy JSON</button>
+              <button id="download-json" type="button" class="btn btn-secondary">Download JSON</button>
+            </div>
+          </div>
+          <div id="results" class="results-body">
+            <p class="empty-state">No results yet. Upload a VCF file and select at least one drug.</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

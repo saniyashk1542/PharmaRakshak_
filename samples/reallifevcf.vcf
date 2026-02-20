@@ -1,0 +1,14 @@
+##fileformat=VCFv4.2
+##source=PharmaGuard_Simulation
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+##INFO=<ID=RS,Number=1,Type=String,Description="dbSNP rsID">
+##INFO=<ID=STAR,Number=1,Type=String,Description="Star allele annotation">
+##INFO=<ID=EFFECT,Number=1,Type=String,Description="Functional effect">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	PATIENT_001
+
+22	42128945	rs3892097	G	A	100	PASS	GENE=CYP2D6;RS=rs3892097;STAR=*4;EFFECT=no_function	GT	0/1
+10	94761900	rs4244285	G	A	100	PASS	GENE=CYP2C19;RS=rs4244285;STAR=*2;EFFECT=loss_of_function	GT	1/1
+16	31107689	rs4149056	T	C	100	PASS	GENE=SLCO1B1;RS=rs4149056;STAR=*5;EFFECT=decreased_function	GT	0/1
+1	97915614	rs1800462	G	A	100	PASS	GENE=DPYD;RS=rs1800462;STAR=*2A;EFFECT=no_function	GT	0/1
+3	46006834	rs1142345	A	G	100	PASS	GENE=TPMT;RS=rs1142345;STAR=*3C;EFFECT=decreased_function	GT	0/1
+10	96602150	rs1057910	A	C	100	PASS	GENE=CYP2C9;RS=rs1057910;STAR=*3;EFFECT=decreased_function	GT	0/1
